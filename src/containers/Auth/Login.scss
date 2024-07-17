@@ -1,10 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 .login-background {
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  // background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   height: 100vh;
+  background: url("background.jpg");
+  font-family: "Poppins", sans-serif;
   .login-container {
     width: 400px;
     border-radius: 10px;
-    background-color: white;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     position: absolute;
     margin: auto;
@@ -17,12 +24,21 @@
       padding: 10px;
       .text-login {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 42px;
         padding-top: 10px;
         text-align: center;
       }
       .login-input {
         margin: 7px 0;
+        .custom-input-user {
+          position: relative;
+          i {
+            position: absolute;
+            right: 8px;
+            top: 10px;
+            cursor: pointer;
+          }
+        }
         .custom-input-password {
           position: relative;
           i {
@@ -41,7 +57,7 @@
         border: none;
         outline: none;
         color: white;
-        background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+        background: -webkit-linear-gradient(left, #af5fbb, #ec66a5);
       }
       .forgot-password {
         font-size: 12px;

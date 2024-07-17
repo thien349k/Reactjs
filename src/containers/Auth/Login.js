@@ -74,6 +74,13 @@ class Login extends Component {
       isshowPassword: !this.state.isshowPassword,
     });
   };
+
+  // handleKeyDown = (event) => {
+  //   if (event.key === "Enter") {
+  //     handleLoginAPI(event);
+  //   }
+  // };
+
   render() {
     //JSX
     return (
@@ -82,17 +89,24 @@ class Login extends Component {
           <div className="login-content row">
             <div className="col-12 text-login">Login</div>
             <div className="col-12 form-group login-input">
-              <label>Username:</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter your username"
-                value={this.state.username}
-                onChange={(event) => this.handleOnChangeUsername(event)}
-              />
+              <label></label>
+              <div className="custom-input-user">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter your username"
+                  value={this.state.username}
+                  onChange={(event) => this.handleOnChangeUsername(event)}
+                  // onKeyDown={this.handleKeyDown}
+                  // required
+                />
+                <span>
+                  <i className="fas fa-user"></i>
+                </span>
+              </div>
             </div>
             <div className="col-12 form-group login-input">
-              <label>Password:</label>
+              <label></label>
               <div className="custom-input-password">
                 <input
                   type={this.state.isshowPassword ? "text" : "password"}
@@ -101,6 +115,8 @@ class Login extends Component {
                   onChange={(event) => {
                     this.handleOnChangePassword(event);
                   }}
+                  // onKeyDown={this.handleKeyDown}
+                  // required
                 />
                 <span
                   onClick={() => {
@@ -108,7 +124,7 @@ class Login extends Component {
                   }}
                 >
                   <i
-                    class={
+                    className={
                       this.state.isshowPassword
                         ? "far fa-eye"
                         : "fas fa-eye-slash"

@@ -7,4 +7,9 @@ const handleLoginAPI = (userEmail, userPassword) => {
 const getAllUsers = (inputId) => {
   return axios.get(`/api/get-all-users?id=${inputId}`);
 };
-export { handleLoginAPI, getAllUsers };
+
+const createNewUserService = (data) => {
+  console.log("check", data);
+  return axios.post("/api/create-new-user", data);
+};
+export { handleLoginAPI, getAllUsers, createNewUserService };
